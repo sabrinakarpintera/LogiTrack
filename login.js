@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
       setFieldError(passwordInput, passwordError, 'Password is required.');
       hasError = true;
     } else if (password.length < 6) {
-      setFieldError(passwordInput, passwordError, 'Password must be at least 6 characters.');
+      setFieldError(passwordInput, passwordError, 'Password must be at least 8 characters.');
       hasError = true;
     } else {
       setFieldError(passwordInput, passwordError, '');
