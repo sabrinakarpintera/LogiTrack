@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LogiTrack | Capstone Project Repository</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Custom Styles -->
+<link href="../css/home.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="brand-logo" href="home.html">
+      <img src="../assets/logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav nav-pill mb-0">
+      <li class="nav-item"><a class="nav-link active" href="home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="saved.html">Saved</a></li>
+    </ul>
+
+    <!-- Logout Button -->
+    <button class="btn btn-logout"><a href="login.html">Log out</a></button>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    
+    <!-- Typewriter Hero Section -->
+    <div class="hero-container">
+      <h1 class="hero-title">Search smarter. Build better.</h1>
+    </div>
+
+    <!-- Search + Filter + Add -->
+    <div class="search-row-container">
+      <div class="search-row">
+        <div class="search-wrap">
+          <i class="bi bi-search"></i>
+          <input type="text" id="searchInput" placeholder="Search capstone projects...">
+          <button class="filter-btn" id="filterToggleBtn" title="Filter by Year">
+            <i class="bi bi-sliders"></i>
+          </button>
+        </div>
+        <a href="add-study.html" class="add-study-btn" title="Add / Request a study">
+          <i class="bi bi-file-earmark-plus"></i>
+        </a>
+      </div>
+
+      <!-- Filter Dropdown Box -->
+      <div class="filter-dropdown d-none" id="filterDropdown">
+        <div class="filter-header d-flex align-items-center justify-content-between mb-2">
+          <span class="filter-title"><i class="bi bi-calendar3 me-1"></i> Filter by Year</span>
+          <button type="button" class="btn-clear-filter" id="resetFilterBtn">Reset</button>
+        </div>
+        <div class="row g-2 align-items-center">
+          <div class="col-6 col-sm-5">
+            <label for="yearFrom" class="filter-label">From</label>
+            <input type="number" id="yearFrom" class="form-control year-input" placeholder="2020" min="1900" max="2099">
+          </div>
+          <div class="col-6 col-sm-5">
+            <label for="yearTo" class="filter-label">To</label>
+            <input type="number" id="yearTo" class="form-control year-input" placeholder="2026" min="1900" max="2099">
+          </div>
+          <div class="col-12 col-sm-2 d-flex align-items-end">
+            <button class="btn btn-apply-filter w-100" id="applyFilterBtn">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Study List -->
+    <div class="study-list" id="studyList">
+      <a href="study.html" class="study-item" data-year="2025">
+        <div class="study-title">Title of Capstone Project: Capstone Repository</div>
+        <div class="study-meta">
+          <span class="study-keywords">Keywords, Keywords, Keywords</span>
+          <span class="study-year-badge">2025</span>
+        </div>
+      </a>
+
+      <a href="study.html" class="study-item" data-year="2023">
+        <div class="study-title">Water Refilling Inventory and Delivery Tracking System</div>
+        <div class="study-meta">
+          <span class="study-keywords">Inventory, PHP, Web System</span>
+          <span class="study-year-badge">2023</span>
+        </div>
+      </a>
+
+      <a href="study.html" class="study-item" data-year="2021">
+        <div class="study-title">Study Space: Interactive Student Learning Platform</div>
+        <div class="study-meta">
+          <span class="study-keywords">HCI, UI/UX, Collaboration</span>
+          <span class="study-year-badge">2021</span>
+        </div>
+      </a>
+      
+      <!-- No Results Message -->
+      <div id="noResults" class="text-center text-muted py-4 d-none">
+        No capstone studies found matching your year filter.
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  2026 | LOGITRACK: A CAPSTONE PROJECT REPOSITORY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="../js/home.js"></script>
+</body>
+</html>

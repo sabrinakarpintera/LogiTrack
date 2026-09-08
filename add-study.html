@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Capstone Project | LogiTrack</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Custom Styles -->
+<link href="../css/add-study.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between">
+
+    <!-- Brand Logo in Upper Left -->
+    <a class="brand-logo" href="../pages/home.html">
+      <img src="../assets/logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav nav-pill mb-0">
+      <li class="nav-item"><a class="nav-link" href="../pages/home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="../pages/saved.html">Saved</a></li>
+    </ul>
+
+    <!-- Logout Button -->
+    <a href="../pages/login.html" class="btn btn-logout">Log out</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container py-4">
+    <div class="form-card">
+      <div class="form-header text-center mb-4">
+        <h1 class="form-page-title">Add Capstone Project</h1>
+        <p class="form-page-subtitle">Submit a new capstone study to the repository</p>
+      </div>
+
+      <form id="studyForm" novalidate>
+
+        <!-- Title -->
+        <div class="form-group mb-4">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" id="title" class="form-control-flat" placeholder="Enter Capstone Project Title" required>
+        </div>
+
+        <!-- Abstract -->
+        <div class="form-group mb-4">
+          <label for="abstract" class="form-label">Abstract</label>
+          <textarea id="abstract" class="form-control-flat" placeholder="Enter Capstone Project Abstract" required></textarea>
+        </div>
+
+        <!-- Keywords -->
+        <div class="form-group mb-4">
+          <label class="form-label">Keywords</label>
+          <div class="chip-row" id="keywordRow">
+            <input type="text" class="chip-input" placeholder="Add Keyword">
+            <button type="button" class="chip-add-btn" data-target="keywordRow" data-kind="keyword" title="Add Keyword">
+              <i class="bi bi-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Authors -->
+        <div class="form-group mb-4">
+          <label class="form-label">Author(s)</label>
+          <div class="chip-row" id="authorRow">
+            <input type="text" class="chip-input" placeholder="Add Author 1">
+            <button type="button" class="chip-add-btn" data-target="authorRow" data-kind="author" title="Add Author">
+              <i class="bi bi-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Meta Grid Row: Publication, Category, Adviser, Technical Critic -->
+        <div class="row g-3 mb-4">
+          <div class="col-md-6 col-lg-3">
+            <label for="publication" class="form-label">Publication Date</label>
+            <div class="date-field">
+              <input type="date" id="publication" class="form-control-flat" value="2026-09-09">
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" class="form-select-flat">
+              <option selected disabled>Select Category</option>
+              <option>Artificial Intelligence</option>
+              <option>Networking</option>
+              <option>System Architecture</option>
+              <option>Social Issues</option>
+              <option>Integration System</option>
+            </select>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <label for="adviser" class="form-label">Adviser</label>
+            <input type="text" id="adviser" class="form-control-flat" placeholder="Enter Name">
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <label for="critic" class="form-label">Technical Critic</label>
+            <input type="text" id="critic" class="form-control-flat" placeholder="Enter Name">
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="form-actions d-flex justify-content-end gap-2 pt-2">
+          <a href="../pages/home.html" class="btn btn-cancel">Cancel</a>
+          <button type="submit" class="btn btn-submit">Submit Study</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer>
+  2026 | LOGITRACK: A CAPSTONE PROJECT REPOSITORY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<script src="../js/add-study.js"></script>
+</body>
+</html>

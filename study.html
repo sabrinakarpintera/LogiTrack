@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title of Capstone Project: AI, Networking | LogiTrack</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Custom Styles -->
+<link href="../css/study.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="brand-logo" href="../pages/home.html">
+      <img src="../assets/logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav nav-pill mb-0">
+      <li class="nav-item"><a class="nav-link" href="../pages/home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="saved.html">Saved</a></li>
+    </ul>
+
+    <!-- Logout Button -->
+    <a href="../pages/login.html" class="btn btn-logout">Log out</a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="detail-wrap">
+
+      <!-- Left: Thumbnail + Meta -->
+      <div class="detail-side-left">
+        <div class="detail-thumb"></div>
+        <div class="detail-dept">Department of Computer Science</div>
+        <div class="detail-pub">Publication: 2026</div>
+        <button class="detail-bookmark" id="bookmarkBtn">
+          <i class="bi bi-bookmark" id="bookmarkIcon"></i> <span id="bookmarkText">Bookmark</span>
+        </button>
+      </div>
+
+      <!-- Main: Title, Abstract, Keywords -->
+      <div class="detail-main">
+        <h1 class="detail-title">Title of Capstone Project: AI, Networking</h1>
+        <div class="detail-authors">Author 1, Author 2, Author 3</div>
+
+        <h2 class="detail-section-title">Abstract</h2>
+        <p class="detail-abstract">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged.
+        </p>
+
+        <h2 class="detail-section-title">Keywords</h2>
+        <div class="detail-keywords">Keyword 1, Keyword 2, Keyword 3</div>
+      </div>
+
+      <!-- Right: Check Similarity -->
+      <div class="detail-side-right">
+        <h2 class="similarity-title">Check Similarity</h2>
+
+        <div class="similarity-box">
+          <textarea placeholder="Enter Title or Abstract"></textarea>
+          <button type="button" class="check-btn">Check</button>
+        </div>
+
+        <div class="similarity-result">90 % Similar to the study</div>
+
+        <div class="suggestion-label">Suggestion:</div>
+        <p class="suggestion-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+        <div class="suggestion-list">
+          <div class="suggestion-item">&ldquo;TITLE CAPSTONE PROJECT 1&rdquo;</div>
+          <div class="suggestion-item">&ldquo;TITLE CAPSTONE PROJECT 2&rdquo;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  2026 | LOGITRACK: A CAPSTONE PROJECT REPOSITORY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
+<!-- Interactive Bookmark Logic -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const bookmarkBtn = document.getElementById('bookmarkBtn');
+    const bookmarkIcon = document.getElementById('bookmarkIcon');
+    const bookmarkText = document.getElementById('bookmarkText');
+
+    bookmarkBtn.addEventListener('click', function () {
+      bookmarkBtn.classList.toggle('bookmarked');
+      const isBookmarked = bookmarkBtn.classList.contains('bookmarked');
+
+      if (isBookmarked) {
+        bookmarkIcon.className = 'bi bi-bookmark-fill';
+        bookmarkText.textContent = 'Saved';
+      } else {
+        bookmarkIcon.className = 'bi bi-bookmark';
+        bookmarkText.textContent = 'Bookmark';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogiTrack — Create your account</title>
+
+    <!-- Google Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Material Symbols -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+
+    <div class="signup-wrapper d-flex align-items-center justify-content-center position-relative overflow-hidden">
+
+        <!-- Ambient Background Accents -->
+        <div class="bg-shape shape-1"></div>
+        <div class="bg-shape shape-2"></div>
+
+        <!-- Form Container -->
+        <div class="form-card-container">
+
+            <!-- Logo Centered Outside the Card -->
+            <div class="text-center mb-3">
+                <img src="../assets/logo.png" alt="LogiTrack Logo" class="external-brand-logo">
+            </div>
+
+            <!-- Form Card -->
+            <div class="form-card">
+
+                <h2 class="form-title">Create account</h2>
+                <p class="form-subtitle">
+                    Already have an account? <a href="login.html" class="link-green">Log in</a>
+                </p>
+
+                <!-- Signup Form -->
+                <form id="signupForm" novalidate>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label class="field-label" for="email">Email address</label>
+                        <input type="email" id="email" class="field-input" placeholder="you@cvsu.edu.ph" required>
+                        <div class="err-msg" id="err-email"></div>
+                    </div>
+
+                    <!-- First Name + Last Name -->
+                    <div class="row g-2 mb-2">
+                        <div class="col-6">
+                            <label class="field-label" for="fname">First name</label>
+                            <input type="text" id="fname" class="field-input" placeholder="Juan" required>
+                            <div class="err-msg" id="err-fname"></div>
+                        </div>
+
+                        <div class="col-6">
+                            <label class="field-label" for="lname">Last name</label>
+                            <input type="text" id="lname" class="field-input" placeholder="Dela Cruz" required>
+                            <div class="err-msg" id="err-lname"></div>
+                        </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                        <label class="field-label" for="password">Password</label>
+                        <input type="password" id="password" class="field-input" placeholder="At least 8 characters" required>
+                        <div class="err-msg" id="err-password"></div>
+                    </div>
+
+                    <!-- Confirm Password -->
+                    <div class="mb-3">
+                        <label class="field-label" for="confirm">Confirm password</label>
+                        <input type="password" id="confirm" class="field-input" placeholder="Re-enter your password" required>
+                        <div class="err-msg" id="err-confirm"></div>
+                    </div>
+
+                    <!-- Role -->
+                    <div class="mb-4">
+                        <label class="field-label">I am signing up as</label>
+                        <div class="role-toggle d-flex gap-2">
+                            <label class="role-opt active w-100" id="opt-student">
+                                <input type="radio" name="role" value="student" checked>
+                                <span class="r-title">Student</span>
+                            </label>
+
+                            <label class="role-opt w-100" id="opt-instructor">
+                                <input type="radio" name="role" value="instructor">
+                                <span class="r-title">Instructor</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="btn-signup w-100">Sign up</button>
+
+                    <!-- Terms -->
+                    <p class="terms-text mt-3 mb-0">
+                        <input type="checkbox" required> By signing up, you agree to LogiTrack's <a href="#">Terms of Use and Privacy Policy.</a>
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- OTP Modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content otp-modal">
+
+                <div class="modal-header flex-column align-items-start">
+                    <div class="d-flex justify-content-between w-100 align-items-center">
+                        <div class="otp-icon-wrap">
+                            <span class="material-symbols-outlined">mail</span>
+                        </div>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <h3 class="otp-title mt-2">Verify your email</h3>
+                    <p class="otp-description">Enter the 6-digit code sent to <span id="otpEmailTarget">your email</span></p>
+                </div>
+
+                <div class="modal-body text-center">
+                    <div class="otp-inputs d-flex justify-content-center gap-2">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="0">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="1">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="2">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="3">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="4">
+                        <input type="text" inputmode="numeric" maxlength="1" class="otp-box" data-idx="5">
+                    </div>
+                    <div class="otp-status" id="otpStatus"></div>
+                </div>
+
+                <div class="modal-footer otp-footer">
+                    <button type="button" class="btn-verify w-100" id="verifyBtn">Verify</button>
+                    <div class="resend-row text-center mt-3">
+                        Didn't get a code?
+                        <button type="button" id="resendBtn" disabled>Resend (<span id="resendTimer">30</span>s)</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/signup.js"></script>
+
+</body>
+</html>
