@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <!-- Custom Styles -->
-<link href="../css/study.css" rel="stylesheet">
+<link href="study.css" rel="stylesheet">
 </head>
 <body>
 
@@ -23,18 +23,18 @@
 
     <!-- Logo -->
     <a class="brand-logo" href="../pages/home.html">
-      <img src="../assets/logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+      <img src="logo.png" alt="LogiTrack Logo" class="nav-logo-img">
     </a>
 
     <!-- Nav Links -->
     <ul class="nav nav-pill mb-0">
-      <li class="nav-item"><a class="nav-link" href="../pages/home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
       <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
       <li class="nav-item"><a class="nav-link" href="saved.html">Saved</a></li>
     </ul>
 
     <!-- Logout Button -->
-    <a href="../pages/login.html" class="btn btn-logout">Log out</a>
+    <a href="index.html" class="btn btn-logout">Log out</a>
   </div>
 </nav>
 
@@ -97,26 +97,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
 <!-- Interactive Bookmark Logic -->
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const bookmarkBtn = document.getElementById('bookmarkBtn');
-    const bookmarkIcon = document.getElementById('bookmarkIcon');
-    const bookmarkText = document.getElementById('bookmarkText');
-
-    bookmarkBtn.addEventListener('click', function () {
-      bookmarkBtn.classList.toggle('bookmarked');
-      const isBookmarked = bookmarkBtn.classList.contains('bookmarked');
-
-      if (isBookmarked) {
-        bookmarkIcon.className = 'bi bi-bookmark-fill';
-        bookmarkText.textContent = 'Saved';
-      } else {
-        bookmarkIcon.className = 'bi bi-bookmark';
-        bookmarkText.textContent = 'Bookmark';
-      }
-    });
-  });
-</script>
+<script src="study.js"></script>
 
 </body>
 </html>
