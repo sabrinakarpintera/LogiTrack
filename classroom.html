@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classroom | LogiTrack</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Custom Styles -->
+<link href="home.css" rel="stylesheet">
+<link href="classroom.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="brand-logo" href="home.html">
+      <img src="logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav nav-pill mb-0">
+      <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link active" href="classroom.html">Classroom</a></li>
+    </ul>
+
+    <!-- Logout Button -->
+    <button class="btn btn-logout"><a href="index.html">Log out</a></button>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="hero-container classroom-hero">
+      <h1 class="hero-title classroom-title">Your classroom at a glance.</h1>
+    </div>
+
+    <!-- Stat Cards -->
+    <div class="classroom-stats" id="classroomStats">
+
+      <a href="cs-advisory.html" class="stat-card">
+        <div class="stat-icon"><i class="bi bi-mortarboard"></i></div>
+        <div class="stat-value" data-count="cs">0</div>
+        <div class="stat-label">CS Advisory Students</div>
+      </a>
+
+      <a href="it-advisory.html" class="stat-card">
+        <div class="stat-icon"><i class="bi bi-laptop"></i></div>
+        <div class="stat-value" data-count="it">0</div>
+        <div class="stat-label">IT Advisory Students</div>
+      </a>
+
+      <a href="capstone-list.html" class="stat-card">
+        <div class="stat-icon"><i class="bi bi-journal-check"></i></div>
+        <div class="stat-value" data-count="capstone">0</div>
+        <div class="stat-label">Submitted Capstone</div>
+      </a>
+
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  2026 | LOGITRACK: A CAPSTONE PROJECT REPOSITORY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="classroom.js"></script>
+</body>
+</html>

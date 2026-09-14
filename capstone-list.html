@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Submitted Capstone Studies | LogiTrack</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Google Font: Outfit -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Custom Styles -->
+<link href="home.css" rel="stylesheet">
+<link href="list-page.css" rel="stylesheet">
+</head>
+<body data-page="capstone-list">
+
+<!-- ===== Navbar ===== -->
+<nav class="navbar navbar-expand-md">
+  <div class="container-fluid px-0 d-flex align-items-center justify-content-between">
+
+    <!-- Logo -->
+    <a class="brand-logo" href="home.html">
+      <img src="logo.png" alt="LogiTrack Logo" class="nav-logo-img">
+    </a>
+
+    <!-- Nav Links -->
+    <ul class="nav nav-pill mb-0">
+      <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+      <li class="nav-item"><a class="nav-link active" href="classroom.html">Classroom</a></li>
+    </ul>
+
+    <!-- Logout Button -->
+    <button class="btn btn-logout"><a href="index.html">Log out</a></button>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="list-page-header">
+      <a href="classroom.html" class="back-link"><i class="bi bi-arrow-left"></i> Back to Classroom</a>
+      <h1 class="list-page-title">Submitted Capstone Studies</h1>
+      <p class="list-page-subtitle">Capstone studies submitted under your advisory.</p>
+    </div>
+
+    <!-- Capstone Table -->
+    <div class="list-page-card">
+      <div class="table-responsive">
+        <table class="table capstone-table">
+          <thead>
+            <tr>
+              <th>Title of the Study</th>
+              <th>Author(s)</th>
+            </tr>
+          </thead>
+          <tbody id="capstoneTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  2026 | LOGITRACK: A CAPSTONE PROJECT REPOSITORY
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="list-page.js"></script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* ---------- Page Header ---------- */
+.list-page-header {
+  max-width: 800px;
+  margin: 2.5rem auto 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--navy);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  width: fit-content;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover {
+  color: var(--gold);
+}
+
+.list-page-title {
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  color: var(--green);
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.list-page-subtitle {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #5b6270;
+  margin: 0;
+}
+
+/* ---------- Content Card ---------- */
+.list-page-card {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  background-color: #ffffff;
+  border: 1px solid rgba(11, 24, 73, 0.08);
+  border-radius: 18px;
+  box-shadow: 0 4px 15px rgba(11, 24, 73, 0.04);
+  padding: 0.5rem 1.5rem;
+}
+
+/* ---------- Student List ---------- */
+.student-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.student-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 0.25rem;
+  border-bottom: 1px solid #eef0e8;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.student-list li:last-child {
+  border-bottom: none;
+}
+
+.student-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: #e8eae1;
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+/* ---------- Capstone Table ---------- */
+.capstone-table {
+  margin-bottom: 0;
+}
+
+.capstone-table thead th {
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.85rem;
+  border-bottom: 2px solid rgba(11, 24, 73, 0.1);
+  padding: 0.9rem 0.5rem;
+}
+
+.capstone-table tbody td {
+  padding: 0.9rem 0.5rem;
+  vertical-align: middle;
+  color: var(--navy);
+  font-size: 0.95rem;
+  border-bottom: 1px solid #eef0e8;
+}
+
+.capstone-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.capstone-table .capstone-title {
+  font-weight: 600;
+}
+
+.capstone-table .capstone-author {
+  color: var(--green);
+  font-weight: 500;
+}
+
+/* ---------- Empty State ---------- */
+.list-empty {
+  text-align: center;
+  color: #8a8f9c;
+  padding: 2rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .list-page-card {
+    padding: 0.5rem 1rem;
+  }
+}
