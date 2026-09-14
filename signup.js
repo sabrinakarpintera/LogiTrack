@@ -4,18 +4,18 @@
 
 
 /* =========================================================
-   ROLE TOGGLE
+   PROGRAM TOGGLE
 ========================================================= */
 
-const optStudent = document.getElementById('opt-student');
-const optInstructor = document.getElementById('opt-instructor');
+const optBsit = document.getElementById('opt-bsit');
+const optBscs = document.getElementById('opt-bscs');
 
-[optStudent, optInstructor].forEach(opt => {
+[optBsit, optBscs].forEach(opt => {
 
     opt.addEventListener('click', () => {
 
-        optStudent.classList.remove('active');
-        optInstructor.classList.remove('active');
+        optBsit.classList.remove('active');
+        optBscs.classList.remove('active');
 
         opt.classList.add('active');
 
@@ -35,7 +35,9 @@ const fields = [
     'fname',
     'lname',
     'password',
-    'confirm'
+    'confirm',
+    'adviser',
+    'classCode'
 ];
 
 
@@ -76,6 +78,8 @@ function validate() {
     const lname = document.getElementById('lname').value.trim();
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm').value;
+    const adviser = document.getElementById('adviser').value;
+    const classCode = document.getElementById('classCode').value.trim();
 
 
     /* Email */
@@ -131,12 +135,15 @@ function validate() {
     }
 
 
-    /* Password */
-    if (password.length < 8) {
+    /* Password Strength Check:
+       At least 8 chars, 1 uppercase, 1 lowercase, 1 number, 1 special character */
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if (!passwordRegex.test(password)) {
 
         setError(
             'password',
-            'Use at least 8 characters.'
+            'Min 8 chars with uppercase, lowercase, number, and special character.'
         );
 
         isValid = false;
@@ -165,21 +172,74 @@ function validate() {
     }
 
 
+    /* Adviser Name */
+    if (!adviser) {
+
+        setError(
+            'adviser',
+            'Please select an adviser.'
+        );
+
+        isValid = false;
+
+    } else {
+
+        setError('adviser', '');
+
+    }
+
+
+    /* Class Code Validation 
+       (Simulated valid class code: "LOGITRACK2026" - change or connect to DB later) */
+    const VALID_CLASS_CODE = "LOGITRACK2026";
+
+    if (!classCode) {
+
+        setError(
+            'classCode',
+            'Class code is required.'
+        );
+
+        isValid = false;
+
+    } else if (classCode !== VALID_CLASS_CODE) {
+
+        setError(
+            'classCode',
+            'Invalid class code. Please check with your adviser.'
+        );
+
+        isValid = false;
+
+    } else {
+
+        setError('classCode', '');
+
+    }
+
+
     return isValid;
 
 }
 
 
 /* =========================================================
-   CLEAR ERRORS WHEN USER TYPES
+   CLEAR ERRORS WHEN USER TYPES OR CHANGES SELECTION
 ========================================================= */
 
 fields.forEach(id => {
 
-    document.getElementById(id).addEventListener(
-        'input',
-        () => setError(id, '')
-    );
+    const element = document.getElementById(id);
+    if (element) {
+        element.addEventListener(
+            'input',
+            () => setError(id, '')
+        );
+        element.addEventListener(
+            'change',
+            () => setError(id, '')
+        );
+    }
 
 });
 
