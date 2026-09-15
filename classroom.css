@@ -23,6 +23,8 @@
   border-radius: 18px;
   padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(11, 24, 73, 0.04);
+  text-decoration: none;
+  display: block;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
