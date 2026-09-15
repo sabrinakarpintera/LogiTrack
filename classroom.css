@@ -7,65 +7,231 @@
   animation: typing 2.4s steps(24, end) forwards;
 }
 
-/* ---------- Stat Cards ---------- */
-.classroom-stats {
+/* ---------- Classroom Grid ---------- */
+.classroom-grid {
   max-width: 900px;
-  margin: 0 auto 3rem;
+  margin: 0 auto;
+  padding-bottom: 7rem;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.25rem;
 }
 
-.stat-card {
+.classroom-card {
   background-color: #ffffff;
   border: 1px solid rgba(11, 24, 73, 0.08);
   border-radius: 18px;
-  padding: 1.75rem 1.25rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 0.5rem;
+  padding: 1.5rem;
   box-shadow: 0 4px 15px rgba(11, 24, 73, 0.04);
-  cursor: pointer;
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.stat-card:hover {
+.classroom-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(11, 24, 73, 0.1);
-  border-color: var(--gold);
 }
 
-.stat-icon {
-  width: 52px;
-  height: 52px;
+.classroom-card-icon {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background-color: #f0f2ea;
   color: var(--green);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.4rem;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.stat-value {
-  font-weight: 800;
-  font-size: 2.25rem;
+.classroom-card-name {
+  font-weight: 700;
+  font-size: 1.1rem;
   color: var(--navy);
-  line-height: 1;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
 }
 
-.stat-label {
-  font-weight: 600;
+.classroom-card-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--navy);
+  background-color: #e8eae1;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+/* ---------- Empty State ---------- */
+.classroom-empty {
+  grid-column: 1 / -1;
+  max-width: 500px;
+  margin: 3rem auto;
+  text-align: center;
+  color: #8a8f9c;
+}
+
+.classroom-empty-icon {
+  font-size: 3rem;
+  color: #c3c8b8;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.classroom-empty p {
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ---------- Floating "Create a Classroom" Button ---------- */
+.fab-create {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  z-index: 1040;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 700;
   font-size: 0.95rem;
+  box-shadow: 0 6px 18px rgba(228, 176, 40, 0.4);
+  transition: all 0.2s ease;
+}
+
+.fab-create .material-symbols-outlined {
+  font-size: 1.4rem;
+}
+
+.fab-create:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(228, 176, 40, 0.5);
+  background-color: #d8a422;
+}
+
+@media (max-width: 576px) {
+  .fab-create {
+    right: 1.25rem;
+    bottom: 1.25rem;
+    padding: 0.9rem;
+  }
+  .fab-create .fab-label {
+    display: none;
+  }
+}
+
+/* ---------- Create Classroom Modal ---------- */
+.modal-content {
+  border-radius: 16px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+}
+
+.modal-header {
+  border-bottom: 1px solid rgba(11, 24, 73, 0.08);
+  padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.form-label {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.classroom-input {
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+.classroom-input:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(11, 24, 73, 0.08);
+}
+
+.class-code-wrap {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.class-code-input {
+  flex: 1;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background-color: #f5f6f1;
   color: var(--green);
 }
 
-@media (max-width: 768px) {
-  .classroom-stats {
-    grid-template-columns: 1fr;
-  }
+.btn-generate-code {
+  background-color: var(--navy);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  width: 44px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.btn-generate-code:hover {
+  background-color: #152163;
+}
+
+.btn-generate-code .material-symbols-outlined {
+  font-size: 1.3rem;
+}
+
+.modal-footer {
+  border-top: 1px solid rgba(11, 24, 73, 0.08);
+  padding: 1.1rem 1.5rem;
+}
+
+.btn-cancel-classroom {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #8a8f9c;
+  padding: 0.6rem 1rem;
+}
+
+.btn-cancel-classroom:hover {
+  color: var(--navy);
+}
+
+.btn-create-classroom {
+  background-color: var(--navy);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 999px;
+  padding: 0.6rem 1.6rem;
+  transition: background-color 0.15s ease;
+}
+
+.btn-create-classroom:hover {
+  background-color: #152163;
+  color: #ffffff;
 }
