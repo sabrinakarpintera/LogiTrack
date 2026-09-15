@@ -37,8 +37,9 @@ document.addEventListener('DOMContentLoaded', function () {
       classroomEmpty.remove();
     }
 
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'classroom-card';
+    card.href = 'classroom-view.html?name=' + encodeURIComponent(name) + '&code=' + encodeURIComponent(code);
     card.innerHTML = `
       <div class="classroom-card-icon"><span class="material-symbols-outlined">school</span></div>
       <div class="classroom-card-name">${name}</div>
